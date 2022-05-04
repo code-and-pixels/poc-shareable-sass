@@ -13,77 +13,84 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/codemirror@5.38.0/theme/panda-syntax.css">
   
   <style>
-    @import url('https://fonts.googleapis.com/css?family=Source+Code+Pro|Source+Sans+Pro');
-    :root {
-        --theme: #000;
-        --font: 'Source Sans Pro';
-    }
-    /* Scrollbars */
-    ::-webkit-scrollbar {
-        width: 5px;
-        height: 5px;
-    }
-    ::-webkit-scrollbar-track {
-        background: transparent;
-    }
-    ::-webkit-scrollbar-thumb {
-        background: #555;
-        border-radius: 20px;
-    }
-    /* Code Mirror Styles */
-    .CodeMirror {
-        font-size: 14px;
-        height: 100%;
-        width: 100%;
-        font-family: 'Source Code Pro';
-    }
-    /* Main Part */
-    .studio {
-        font-family: var(--font);
-        overflow: hidden;
-        display: flex;
-        flex-flow: row-reverse nowrap;
-    }
+@import url("https://fonts.googleapis.com/css?family=Source+Code+Pro|Source+Sans+Pro");
+:root {
+    --theme: #000;
+    --font: "Source Sans Pro";
+}
+/* Scrollbars */
+::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+}
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+::-webkit-scrollbar-thumb {
+    background: #555;
+    border-radius: 20px;
+}
+/* Code Mirror Styles */
+.CodeMirror {
+    font-size: 14px;
+    height: 100%;
+    width: 100%;
+    font-family: "Source Code Pro";
+}
+/* Main Part */
+.studio {
+    font-family: var(--font);
+    overflow: hidden;
+    display: flex;
+    flex-flow: row-reverse nowrap;
+}
 
-    .control-room, .live-room {
-        flex-basis: 50%;
-        height: 100vh
-    }
+.control-room,
+.live-room {
+    height: 100vh;
+}
 
-    /* Editor Wrapper Styles */
-    .editor {
-        box-sizing: border-box;
-        flex-basis: 33.3333%;
-    }
-    #html {
-        border-left: solid 20px #333;
-        border-bottom: solid 1px #777;
-    }
-    #css {
-        border-left: solid 20px #333;
-        border-bottom: solid 1px #777;
-    }
-    #js {
-        border-left: solid 20px #333;
-    }
-    /* The Wrapper for the editor wrappers */
-    .control-room {
-        background: #eee;
-        border-top: solid 1px #000;
-        border-bottom: solid 10px #333;
-        display: flex;
-        flex-flow: column nowrap;
-    }
-    /* Live Preview Wrapper */
-    .live-room {
-        background: #fff;
-        border-top: solid 10px #333;
-    }
-    /* Iframe Live Preview */
-    .live-room iframe {
-        width: 100%;
-        height: 100%;
-    }
+.control-room {
+    flex-basis: 40vw;
+}
+
+.live-room {
+    flex-basis: 60vw;
+}
+
+/* Editor Wrapper Styles */
+.editor {
+    box-sizing: border-box;
+    flex-basis: 33.3333%;
+    border-left: solid 20px #333;
+}
+#html {
+    border-bottom: solid 1px #777;
+}
+#css {
+    border-bottom: solid 1px #777;
+}
+#js {
+}
+/* The Wrapper for the editor wrappers */
+.control-room {
+    background: #eee;
+    border-top: solid 10px #333;
+    border-bottom: solid 10px #333;
+    display: flex;
+    flex-flow: column nowrap;
+}
+/* Live Preview Wrapper */
+.live-room {
+    background: #fff;
+    border-top: solid 10px #333;
+    border-bottom: solid 10px #333;
+}
+/* Iframe Live Preview */
+.live-room iframe {
+    width: 100%;
+    height: 100%;
+}
   </style>
 </head>
 
