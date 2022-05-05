@@ -2,6 +2,7 @@
 
 <!--
   TODO
+    _ fix JS
     _ dragable/resizable editor/preview panes
       research here: https://codepen.io/code-and-pixels/pen/jOZPvmb
     _ Sass or CSS
@@ -185,6 +186,7 @@
         // send output from code panes to iframe
         const preview = document.getElementById("live");
         preview.contentWindow.document.body.innerHTML = "<h1>Hello World!</h1>";
+      
         const style = document.createElement("style");
         style.setAttribute("id", "style");
         style.innerHTML = "body {color: red;}";
@@ -199,9 +201,15 @@
             preview.contentWindow.document.body.innerHTML =
             workspace.editor.html.getValue();
         });
+      
         CodeMirror.on(workspace.editor.css, "change", function () {
             preview.contentWindow.document.getElementById("style").innerHTML =
             workspace.editor.css.getValue();
+        });
+      
+        CodeMirror.on(workspace.editor.js, "change", function () {
+            preview.contentWindow.document.getElementByTagName("style").innerHTML =
+            workspace.editor.js.getValue();
         });
     </script>
   </body>
