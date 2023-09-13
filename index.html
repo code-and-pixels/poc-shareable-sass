@@ -1,65 +1,96 @@
-<!doctype html>
+<!DOCTYPE html>
 
 <html lang="en">
-    <head>
-        <meta charset="utf-8">
+	<head>
+		<meta charset="utf-8" />
 
-        <title>Amy Osborne</title>
-        <meta name="description" content="A site perpetually under construction">
-        <meta name="author" content="Amy Osborne">
+		<title>Amy Osborne</title>
+		<meta name="description" content="A site perpetually under construction" />
+		<meta name="author" content="Amy Osborne" />
+		<meta name="robots" content="noindex, nofollow" />
 
-        <style>
-            * {
-            box-sizing: border-box;
-            }
+		<style>
+			.wrapper {
+				display: grid;
+				gap: 20px;
+				grid-template-areas:
+					"header"
+					"nav"
+					"content"
+					"sidebar"
+					"ad"
+					"footer";
+			}
 
-            body {
-            font-size: 100%;
-            margin: 0;
-            padding: 4em;
-            }
+			.main-head {
+				grid-area: header;
+			}
+			.content {
+				grid-area: content;
+			}
+			.main-nav {
+				grid-area: nav;
+			}
+			.side {
+				grid-area: sidebar;
+			}
+			.ad {
+				grid-area: ad;
+			}
+			.main-footer {
+				grid-area: footer;
+			}
+			@media (min-width: 768px) {
+				.wrapper {
+					grid-template-columns: 1fr 3fr;
+					grid-template-areas:
+						"header  header"
+						"nav     nav"
+						"sidebar content"
+						"ad      footer";
+				}
+				nav ul {
+					display: flex;
+					justify-content: space-between;
+				}
+			}
 
-            section {
-            max-width: 300px;
-            margin-left: auto;
-            margin-right: auto;
-            }
+			@media (min-width: 991px) {
+				.wrapper {
+					grid-template-columns: 1fr 4fr 1fr;
+					grid-template-areas:
+						"header header  header"
+						"nav    content sidebar"
+						"nav    content ad"
+						"footer footer  footer";
+				}
+				nav ul {
+					flex-direction: column;
+				}
+			}
+		</style>
+	</head>
 
-            input {
-            padding: 0.5em 1.5em 0.65em;
-            background: #f0f0f1;
-            border: 1px solid #737373;
-            width: 75%;
-            margin-left: auto;
-            margin-right: auto;
-            }
-            input + input {
-            margin-top: 2em;
-            }
-
-            .input-1 {
-            color: #737373;
-            font-size: 12px;
-            }
-
-            .input-2 {
-            color: #737373;
-            font-size: 16px;
-            }
-
-            .input-1 {
-            color: #414141;
-            font-size: 12px;
-            }
-        </style>
-
-    </head>
-
-    <body>
-        <section>
-            <input class="input-1" type="text" name="test-input" placeholder="This is a text input" />
-            <input class="input-2" type="text" name="test-input" placeholder="This is a text input" />
-            <input class="input-3" type="text" name="test-input" placeholder="This is a text input" />
-        </section>
-    </body>
+	<body>
+		<section class="wrapper">
+			<header class="main-head">The header</header>
+			<nav class="main-nav">
+				<ul>
+					<li><a href="">Nav 1</a></li>
+					<li><a href="">Nav 2</a></li>
+					<li><a href="">Nav 3</a></li>
+				</ul>
+			</nav>
+			<article class="content">
+				<h1>Main article area</h1>
+				<p>
+					In this layout, we display the areas in source order for any screen less that 500 pixels wide. We go to a two column layout, and then to a
+					three column layout by redefining the grid, and the placement of items on the grid.
+				</p>
+			</article>
+			<aside class="side">Sidebar</aside>
+			<div class="ad">Advertising</div>
+			<footer class="main-footer">The footer</footer>
+		</section>
+	</body>
 </html>
